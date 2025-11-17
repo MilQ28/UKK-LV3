@@ -11,13 +11,23 @@
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #00113dcd;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     background-image: url(bg.jpg);
     background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* ubah angka terakhir untuk lebih gelap/terang */
+    z-index: -1;
+    height: 100%;
+    width: auto;
 }
 
 /* Heading */
@@ -57,13 +67,12 @@ tr:nth-child(even) {
 a {
     text-decoration: none;
     color: #007BFF;
-    background-color: #f9f9f9;
-
 }
 
 #tambahdata {
     padding: 10px;
     border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 #tambahdata:hover {
@@ -112,4 +121,9 @@ form button {
 
 form button:hover {
     background-color: #0056b3;
+}
+
+p {
+    color: #fafafa;
+    margin-top: 10px;
 }
