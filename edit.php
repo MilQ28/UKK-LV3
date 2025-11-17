@@ -21,7 +21,13 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM alumni WHERE id=$i
         <input type="date" name="tanggal_lahir" value="<?= $data['tanggal_lahir'] ?>" required>
         <textarea name="alamat" required><?= $data['alamat'] ?></textarea>
         <input type="number" name="tahun_lulus" value="<?= $data['tahun_lulus'] ?>" required>
-        <input type="text" name="jurusan" value="<?= $data['jurusan'] ?>" required>
+        <select name="jurusan" required>
+            <option value="">Jurusan</option>
+            <option value="RPL">RPL</option>
+            <option value="TKJ">TKJ</option>
+            <option value="TJAT">TJAT</option>
+            <option value="ANIMASI">ANIMASI</option>
+        </select>
         <button type="submit" name="update">Update</button>
     </form>
 
