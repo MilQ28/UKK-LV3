@@ -9,7 +9,7 @@
 
 <body>
     <h2>Data Alumni Sekolah</h2>
-    <a href="tambah.php">+ Tambah Data</a>
+    <a href="tambah.php" id="tambahdata">+ Tambah Data</a>
     <table>
         <tr>
             <th>ID</th>
@@ -21,7 +21,7 @@
             <th>Alamat</th>
             <th>Tahun Lulus</th>
             <th>Jurusan</th>
-            <th>ubah</th>
+            <th>Perubahan</th>
         </tr>
         <?php
         $result = mysqli_query($conn, "SELECT * FROM alumni");
