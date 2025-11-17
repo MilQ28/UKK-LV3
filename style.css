@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    transition: 300ms;
 }
 
 /* Buat body menutupi seluruh tinggi layar */
@@ -14,18 +16,21 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background-image: url(bg.jpg);
+    background-size: cover;
 }
 
 /* Heading */
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #fafafa;
 }
 
 /* Tabel */
 table {
+    margin-top: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     border-collapse: collapse;
     background-color: #fff;
     border-radius: 8px;
@@ -52,6 +57,20 @@ tr:nth-child(even) {
 a {
     text-decoration: none;
     color: #007BFF;
+    background-color: #f9f9f9;
+
+}
+
+#tambahdata {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#tambahdata:hover {
+    padding: 10px;
+    border-radius: 5px;
+
+    background-color: #cdcdcd;
 }
 
 a:hover {
@@ -71,7 +90,8 @@ form {
 
 form input,
 form textarea,
-form button {
+form button,
+select {
     display: block;
     width: 100%;
     margin-bottom: 12px;
