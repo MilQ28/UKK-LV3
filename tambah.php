@@ -17,7 +17,13 @@
         <input type="date" name="tanggal_lahir" required>
         <textarea name="alamat" placeholder="Alamat" required></textarea>
         <input type="number" name="tahun_lulus" placeholder="Tahun Lulus" required>
-        <input type="text" name="jurusan" placeholder="Jurusan" required>
+        <select name="jurusan" required>
+            <option value="">Jurusan</option>
+            <option value="RPL">RPL</option>
+            <option value="TKJ">TKJ</option>
+            <option value="TJAT">TJAT</option>
+            <option value="ANIMASI">ANIMASI</option>
+        </select>
         <button type="submit" name="submit">Simpan</button>
     </form>
 
@@ -36,7 +42,7 @@
         $cek = mysqli_query($conn, "SELECT * FROM alumni WHERE nik='$nik' OR nisn='$nisn'");
 
         if (mysqli_num_rows($cek) > 0) {
-            echo "<p style='color:red;'>❌ NIK atau NISN sudah digunakan! Silakan periksa kembali.</p>";
+            echo "<p style='color:red;'>NIK atau NISN sudah digunakan! Silakan periksa kembali.</p>";
         } else {
             // Jika belum ada, simpan data
             $sql = "INSERT INTO alumni (nama, nik, nisn, tempat_lahir, tanggal_lahir, alamat, tahun_lulus, jurusan)
@@ -44,7 +50,7 @@
             if (mysqli_query($conn, $sql)) {
                 echo "<p style='color:green;'>✅ Data berhasil disimpan! <a href='index.php'>Kembali</a></p>";
             } else {
-                echo "<p style='color:red;'>❌ Gagal menyimpan data!</p>";
+                echo "<p style='color:red;'>Gagal menyimpan data!</p>";
             }
         }
     }
